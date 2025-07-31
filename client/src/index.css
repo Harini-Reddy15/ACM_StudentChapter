@@ -98,12 +98,12 @@
   }
 
   .nav-link.active {
-    @apply text-blue-300;
+    @apply text-blue-600;
   }
 
   .nav-link.active::after {
     content: '';
-    @apply absolute -bottom-1 left-0 w-full h-0.5 bg-blue-300 rounded-full;
+    @apply absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 rounded-full;
   }
 }
 
