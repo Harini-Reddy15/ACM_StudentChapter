@@ -28,14 +28,14 @@ export default function Hero() {
             >
               Learn More
             </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 text-lg font-semibold backdrop-blur border-white/30 hover:border-white/50"
-              onClick={() => window.open('https://forms.gle/wpSqWMN8u1ugFJfk9', '_blank')}
+            <a 
+              href="https://forms.gle/wpSqWMN8u1ugFJfk9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white/20 hover:bg-white/30 text-white backdrop-blur border border-white/30 hover:border-white/50 rounded-md transition-all duration-200"
             >
               Apply to Join
-            </Button>
+            </a>
           </div>
         </div>
       </div>
