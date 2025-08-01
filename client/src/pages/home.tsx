@@ -3,6 +3,7 @@ import Header from "@/components/sections/header";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import Events from "@/components/sections/events";
+import Team from "@/components/sections/team";
 import Contact from "@/components/sections/contact";
 import Footer from "@/components/sections/footer";
 import { useScrollPosition } from "@/hooks/use-scroll";
@@ -40,6 +41,7 @@ export default function Home() {
         <Hero />
         <About />
         <Events />
+        <Team />
         <Contact />
       </main>
       <Footer />

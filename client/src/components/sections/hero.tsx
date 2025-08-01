@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import TypingAnimation from "@/components/typing-animation";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -14,7 +15,7 @@ export default function Hero() {
         <div className="glass-card p-8 md:p-16">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow-lg">
             Welcome to <span className="text-white">St. Martin's</span><br />
-            ACM Student Chapter
+            <TypingAnimation text="ACM Student Chapter" speed={150} />
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto text-shadow">
             Advancing computing as a science and profession. Join our community of innovators, 
@@ -23,7 +24,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold w-full sm:w-auto"
               onClick={() => scrollToSection('#about')}
             >
               Learn More
@@ -32,7 +33,7 @@ export default function Hero() {
               href="https://forms.gle/wpSqWMN8u1ugFJfk9" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white/20 hover:bg-white/30 text-white backdrop-blur border border-white/30 hover:border-white/50 rounded-md transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white/20 hover:bg-white/30 text-white backdrop-blur border border-white/30 hover:border-white/50 rounded-md transition-all duration-200 w-full sm:w-auto"
             >
               Apply to Join
             </a>
