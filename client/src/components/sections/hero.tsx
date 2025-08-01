@@ -21,19 +21,12 @@ export default function Hero() {
             Advancing computing as a science and profession. Join our community of innovators, 
             learners, and future leaders in technology.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-            <Button 
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold flex-1"
-              onClick={() => scrollToSection('#about')}
-            >
-              Learn More
-            </Button>
+          <div className="flex justify-center">
             <a 
               href="https://forms.gle/wpSqWMN8u1ugFJfk9" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white/20 hover:bg-white/30 text-white backdrop-blur border border-white/30 hover:border-white/50 rounded-md transition-all duration-200 flex-1"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-white/20 hover:bg-white/30 text-white backdrop-blur border border-white/30 hover:border-white/50 rounded-md transition-all duration-200"
             >
               Apply to Join
             </a>
