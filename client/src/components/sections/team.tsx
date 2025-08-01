@@ -39,9 +39,24 @@ const leadMembers = [
 ];
 
 const coreMembers = [
-  "John Anderson", "Maria Garcia", "Ryan Wilson", "Priya Patel",
-  "Kevin Lee", "Amanda Brown", "Chris Taylor", "Jessica Wang",
-  "Daniel Martinez", "Rachel Green", "Tony Stark", "Natasha Romanoff"
+  { name: "K. Shashank", role: "Operations Head" },
+  { name: "Pramod Yadav", role: "Logistics Head" },
+  { name: "Srikar Prasad", role: "Creative Head" },
+  { name: "Manikanta Kasyap", role: "Logistics Co-Lead" },
+  { name: "Sameer Meharaaz", role: "PR - Lead" },
+  { name: "Gayathri", role: "Chapter Historian" },
+  { name: "Vijay Mohan", role: "Photography" },
+  { name: "Vaishnavi", role: "AI & Research Head" },
+  { name: "K. Tanmayee", role: "Ambience and Setup Head" },
+  { name: "Manas Kumar", role: "Content Creator" },
+  { name: "Sarayu", role: "Innovation Architect" },
+  { name: "Triaksh Thakur", role: "Executive Manager" },
+  { name: "Gouthami", role: "Student Support Head" },
+  { name: "Satish Kumar", role: "Content Creator Co-Lead" },
+  { name: "Abhi Satwik", role: "AI & Research Co-Lead" },
+  { name: "R. Vikas", role: "Creative Co-Lead" },
+  { name: "K. Anirudh", role: "Student Support Co-Lead" },
+  { name: "A. Abhinav", role: "Co-Executive Manager" }
 ];
 
 export default function Team() {
@@ -79,13 +94,14 @@ export default function Team() {
         <div>
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Core Team Members</h3>
           <div className="glass-card p-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {coreMembers.map((member, index) => (
                 <div
                   key={index}
                   className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-all duration-300"
                 >
-                  <p className="text-white font-medium">{member}</p>
+                  <p className="text-white font-semibold mb-1">{member.name}</p>
+                  <p className="text-blue-300 text-sm">{member.role}</p>
                 </div>
               ))}
             </div>
