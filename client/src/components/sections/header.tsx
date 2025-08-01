@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useScrollPosition } from "@/hooks/use-scroll";
-import acmLogoPath from "@assets/acm logo_1754027168526.png";
-import smecLogoPath from "@assets/logo_1754027219792.png";
+import acmLogoPath from "@assets/acm_logo_1754027979833.png";
+import smecLogoPath from "@assets/logo__1754028002215.png";
 
 const navigation = [
   { name: "Home", href: "#home" },
@@ -48,7 +48,7 @@ export default function Header() {
           <img 
             src={acmLogoPath}
             alt="ACM Logo" 
-            className="h-14 w-14 object-contain"
+            className="h-16 w-16 object-contain"
           />
         </div>
 
@@ -91,7 +91,7 @@ export default function Header() {
           <img 
             src={smecLogoPath}
             alt="SMEC Logo" 
-            className="h-14 w-14 object-contain"
+            className="h-16 w-16 object-contain"
           />
         </div>
       </div>
