@@ -3,22 +3,10 @@ import { Button } from "@/components/ui/button";
 
 const events = [
   {
-    title: "AI/ML Workshop",
-    date: "March 15, 2024",
-    description: "Hands-on workshop covering machine learning fundamentals and practical applications.",
+    title: "Inauguration Event",
+    date: "August 2, 2025",
+    description: "Join us for the official inauguration ceremony of St. Martin's ACM Student Chapter. An exciting event to kickstart our journey in advancing computing education.",
     image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
-  },
-  {
-    title: "Tech Talk Series",
-    date: "March 22, 2024", 
-    description: "Industry experts sharing insights on latest technology trends and career opportunities.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
-  },
-  {
-    title: "Coding Competition",
-    date: "April 5, 2024",
-    description: "Annual programming contest with exciting prizes and recognition for top performers.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
   }
 ];
 
@@ -34,8 +22,9 @@ export default function Events() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {events.map((event, index) => (
+        <div className="flex justify-center">
+          <div className="max-w-md w-full">
+            {events.map((event, index) => (
             <div key={index} className="glass-card overflow-hidden hover:scale-105 transition-all duration-300">
               <img 
                 src={event.image}
@@ -56,7 +45,8 @@ export default function Events() {
                 </button>
               </div>
             </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* View All Events Button */}
