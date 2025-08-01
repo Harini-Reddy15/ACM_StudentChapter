@@ -18,14 +18,14 @@ export default function Header() {
   const scrollPosition = useScrollPosition();
 
   useEffect(() => {
-    const sections = document.querySelectorAll('section[id]');
-    let current = 'home';
-    
-    sections.forEach(section => {
-      const htmlElement = section as HTMLElement;
-      const sectionTop = htmlElement.offsetTop - 100;
+    const sections = document.querySelectorAll("section[id]");
+    let current = "home";
+
+    sections.forEach((section) => {
+      const element = section as HTMLElement;
+      const sectionTop = element.offsetTop - 120;
       if (scrollPosition >= sectionTop) {
-        current = section.getAttribute('id') || 'home';
+        current = section.getAttribute("id") || "home";
       }
     });
 
@@ -35,82 +35,68 @@ export default function Header() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setMobileMenuOpen(false);
     }
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 p-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* ACM Logo - Top Left */}
-        <div className="flex items-center">
-          <img 
-            src={acmLogoPath}
-            alt="ACM Logo" 
-            className="h-16 w-16 object-contain"
-          />
+    // --- EDITED LINE ---
+    // The header is now centered, has horizontal padding, a top margin, and rounded corners.
+    <header className="fixed top-4 left-1/2 z-50 w-[95%] max-w-7xl -translate-x-1/2 rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-lg">
+      <div className="mx-auto flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      
+        <img src={acmLogoPath} alt="ACM Logo" className="h-12 w-auto" />
+
+        {/* Center: Nav */}
+        <nav className="hidden md:flex gap-6">
+          {navigation.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => scrollToSection(item.href)}
+              className={`relative text-white font-medium transition-colors hover:text-white/80`}
+            >
+              {item.name}
+              {activeSection === item.href.slice(1) && (
+                 <span className="absolute bottom-[-10px] left-1/2 h-[2px] w-8 -translate-x-1/2 rounded-full bg-white"></span>
+              )}
+            </button>
+          ))}
+        </nav>
+
+        {/* Right: SMEC Logo and Menu */}
+        <div className="flex items-center gap-2">
+          <img src={smecLogoPath} alt="SMEC Logo" className="h-12 w-auto" />
+        
+          <button
+            className="md:hidden ml-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6 text-white" />
+            ) : (
+              <Menu className="h-6 w-6 text-white" />
+            )}
+          </button>
         </div>
 
-        {/* Navigation Bar - Center */}
-        <div className="flex-1 max-w-4xl mx-8">
-          <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl px-6 py-3 shadow-lg">
-            <div className="flex justify-center items-center">
-              {/* Navigation - Desktop */}
-              <nav className="hidden md:flex space-x-8 flex-1 justify-center">
-                {navigation.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href)}
-                    className={`nav-link text-white hover:text-white/80 transition-colors duration-200 font-medium ${
-                      activeSection === item.href.slice(1) ? 'active' : ''
-                    }`}
-                  >
-                    {item.name}
-                  </button>
-                ))}
-              </nav>
-
-              {/* Mobile menu button */}
-              <button
-                className="md:hidden p-2"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                {mobileMenuOpen ? (
-                  <X className="h-6 w-6 text-white" />
-                ) : (
-                  <Menu className="h-6 w-6 text-white" />
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* SMEC Logo - Right side */}
-        <div className="flex items-center">
-          <img 
-            src={smecLogoPath}
-            alt="SMEC Logo" 
-            className="h-16 w-16 object-contain"
-          />
-        </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2">
-          <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl px-4 py-3 shadow-lg">
-            <div className="space-y-2">
-              {navigation.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-2 text-white hover:text-white/80"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
+        <div className="md:hidden px-4 pb-4">
+          <div className="space-y-2 rounded-xl bg-white/20 p-4 shadow-lg backdrop-blur-md">
+            {navigation.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+                className={`block w-full rounded-md py-2 text-left font-medium text-white transition-colors hover:bg-white/10 px-3 ${
+                  activeSection === item.href.slice(1) ? "bg-white/20" : ""
+                }`}
+              >
+                {item.name}
+              </button>
+            ))}
           </div>
         </div>
       )}
