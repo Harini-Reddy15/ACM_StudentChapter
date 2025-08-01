@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useScrollPosition } from "@/hooks/use-scroll";
-import acmLogoPath from "@assets/acm logo_1753950471424.jpg";
-import smecLogoPath from "@assets/logo_1753951068269.jpg";
+import acmLogoPath from "@assets/acm logo_1754027168526.png";
+import smecLogoPath from "@assets/logo_1754027219792.png";
 
 const navigation = [
   { name: "Home", href: "#home" },
@@ -42,46 +42,61 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 p-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl px-6 py-3 shadow-lg">
-          <div className="flex justify-between items-center">
-            {/* Navigation - Desktop */}
-            <nav className="hidden md:flex space-x-8 flex-1 justify-center">
-              {navigation.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className={`nav-link text-blue-800 hover:text-blue-600 transition-colors duration-200 font-medium ${
-                    activeSection === item.href.slice(1) ? 'active' : ''
-                  }`}
-                >
-                  {item.name}
-                </button>
-              ))}
-            </nav>
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* ACM Logo - Top Left */}
+        <div className="flex items-center">
+          <img 
+            src={acmLogoPath}
+            alt="ACM Logo" 
+            className="h-14 w-14 object-contain"
+          />
+        </div>
 
-            {/* Logo - Top Right */}
-            <div className="flex items-center">
-              <img 
-                src={smecLogoPath}
-                alt="SMEC Logo" 
-                className="h-14 w-14 object-contain"
-              />
+        {/* Navigation Bar - Center */}
+        <div className="flex-1 max-w-4xl mx-8">
+          <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl px-6 py-3 shadow-lg">
+            <div className="flex justify-between items-center">
+              {/* Navigation - Desktop */}
+              <nav className="hidden md:flex space-x-8 flex-1 justify-center">
+                {navigation.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    className={`nav-link text-blue-800 hover:text-blue-600 transition-colors duration-200 font-medium ${
+                      activeSection === item.href.slice(1) ? 'active' : ''
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </nav>
+
+              {/* SMEC Logo - Right side of nav */}
+              <div className="flex items-center ml-4">
+                <img 
+                  src={smecLogoPath}
+                  alt="SMEC Logo" 
+                  className="h-12 w-12 object-contain"
+                />
+              </div>
+
+              {/* Mobile menu button */}
+              <button
+                className="md:hidden p-2"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-6 w-6 text-blue-800" />
+                ) : (
+                  <Menu className="h-6 w-6 text-blue-800" />
+                )}
+              </button>
             </div>
-
-            {/* Mobile menu button */}
-            <button
-              className="md:hidden p-2"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6 text-blue-800" />
-              ) : (
-                <Menu className="h-6 w-6 text-blue-800" />
-              )}
-            </button>
           </div>
         </div>
+
+        {/* Spacer for balance */}
+        <div className="w-14"></div>
       </div>
 
       {/* Mobile Navigation */}
