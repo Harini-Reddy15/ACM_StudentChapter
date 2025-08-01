@@ -1,47 +1,35 @@
-import { Linkedin, Mail } from "lucide-react";
+import navyathaImage from "@assets/navyatasne2_1754029645258.jpg";
 
 const leadMembers = [
   {
-    name: "Alex Johnson",
-    title: "Chapter President",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    linkedin: "#",
-    email: "alex@acm.smec.edu"
+    name: "Navyatha Sayyaparaju",
+    title: "Student Chair",
+    image: navyathaImage,
   },
   {
     name: "Sarah Chen",
     title: "Vice President",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    linkedin: "#",
-    email: "sarah@acm.smec.edu"
   },
   {
     name: "Michael Davis",
     title: "Technical Lead",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    linkedin: "#",
-    email: "michael@acm.smec.edu"
   },
   {
     name: "Emily Rodriguez",
     title: "Events Coordinator",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    linkedin: "#",
-    email: "emily@acm.smec.edu"
   },
   {
     name: "David Kim",
     title: "Treasurer",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    linkedin: "#",
-    email: "david@acm.smec.edu"
   },
   {
     name: "Lisa Thompson",
     title: "Secretary",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-    linkedin: "#",
-    email: "lisa@acm.smec.edu"
   }
 ];
 
@@ -64,7 +52,7 @@ export default function Team() {
 
         {/* Lead Members */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">Leadership Team</h3>
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">Leads</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {leadMembers.map((member, index) => (
               <div key={index} className="glass-card p-6 text-center hover:scale-105 transition-all duration-300">
@@ -77,20 +65,6 @@ export default function Team() {
                 </div>
                 <h4 className="text-xl font-bold text-white mb-2">{member.name}</h4>
                 <p className="text-blue-300 mb-4 font-medium">{member.title}</p>
-                <div className="flex justify-center space-x-4">
-                  <a
-                    href={member.linkedin}
-                    className="text-white/60 hover:text-blue-300 transition-colors duration-200"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="text-white/60 hover:text-blue-300 transition-colors duration-200"
-                  >
-                    <Mail className="h-5 w-5" />
-                  </a>
-                </div>
               </div>
             ))}
           </div>
