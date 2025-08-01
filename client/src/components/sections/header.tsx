@@ -55,14 +55,14 @@ export default function Header() {
         {/* Navigation Bar - Center */}
         <div className="flex-1 max-w-4xl mx-8">
           <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl px-6 py-3 shadow-lg">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-center items-center">
               {/* Navigation - Desktop */}
               <nav className="hidden md:flex space-x-8 flex-1 justify-center">
                 {navigation.map((item) => (
                   <button
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
-                    className={`nav-link text-blue-800 hover:text-blue-600 transition-colors duration-200 font-medium ${
+                    className={`nav-link text-white hover:text-white/80 transition-colors duration-200 font-medium ${
                       activeSection === item.href.slice(1) ? 'active' : ''
                     }`}
                   >
@@ -71,32 +71,29 @@ export default function Header() {
                 ))}
               </nav>
 
-              {/* SMEC Logo - Right side of nav */}
-              <div className="flex items-center ml-4">
-                <img 
-                  src={smecLogoPath}
-                  alt="SMEC Logo" 
-                  className="h-12 w-12 object-contain"
-                />
-              </div>
-
               {/* Mobile menu button */}
               <button
                 className="md:hidden p-2"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 {mobileMenuOpen ? (
-                  <X className="h-6 w-6 text-blue-800" />
+                  <X className="h-6 w-6 text-white" />
                 ) : (
-                  <Menu className="h-6 w-6 text-blue-800" />
+                  <Menu className="h-6 w-6 text-white" />
                 )}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Spacer for balance */}
-        <div className="w-14"></div>
+        {/* SMEC Logo - Right side */}
+        <div className="flex items-center">
+          <img 
+            src={smecLogoPath}
+            alt="SMEC Logo" 
+            className="h-14 w-14 object-contain"
+          />
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -108,7 +105,7 @@ export default function Header() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-2 text-blue-800 hover:text-blue-600"
+                  className="block w-full text-left py-2 text-white hover:text-white/80"
                 >
                   {item.name}
                 </button>
