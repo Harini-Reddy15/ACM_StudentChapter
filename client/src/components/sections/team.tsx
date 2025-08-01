@@ -1,4 +1,9 @@
 import navyathaImage from "@assets/navyatasne2_1754029645258.jpg";
+import tshashankImage from "@assets/TShashank_1754029815783.jpg";
+import kruthiImage from "@assets/kruthisnr_1754029938930.jpg";
+import sahasraImage from "@assets/sahasra_1754030161495.jpg";
+import harshImage from "@assets/harshsnr_1754030317028.jpg";
+import hariniImage from "@assets/harinisnr_1754030432845.jpg";
 
 const leadMembers = [
   {
@@ -7,29 +12,29 @@ const leadMembers = [
     image: navyathaImage,
   },
   {
-    name: "Sarah Chen",
-    title: "Vice President",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    name: "T. Shashank",
+    title: "Student Vice Chair",
+    image: tshashankImage,
   },
   {
-    name: "Michael Davis",
-    title: "Technical Lead",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-  },
-  {
-    name: "Emily Rodriguez",
-    title: "Events Coordinator",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-  },
-  {
-    name: "David Kim",
-    title: "Treasurer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-  },
-  {
-    name: "Lisa Thompson",
+    name: "Kruthi Geerlapalli",
     title: "Secretary",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    image: kruthiImage,
+  },
+  {
+    name: "Sahasra Banuri",
+    title: "Treasurer",
+    image: sahasraImage,
+  },
+  {
+    name: "Harsh Rapaka",
+    title: "Student Membership Chair",
+    image: harshImage,
+  },
+  {
+    name: "Harini Reddy",
+    title: "Web Master",
+    image: hariniImage,
   }
 ];
 
