@@ -1,55 +1,6 @@
-import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, Github, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, MapPin, Clock, Instagram, Linkedin } from "lucide-react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
-  
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message! We will get back to you soon.",
-    });
-
-    // Reset form
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      subject: "",
-      message: ""
-    });
-  };
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
   return (
     <section id="contact" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,11 +12,10 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
+        <div className="flex justify-center">
+          <div className="max-w-2xl w-full">
             <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">Get in Touch</h3>
               
               <div className="space-y-6">
                 {/* Email */}
@@ -85,7 +35,7 @@ export default function Contact() {
                     <Phone className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold mb-1">Phone</h4>
+                    <h4 className="text-white font-semibold mb-1">Contact</h4>
                     <p className="text-white/80">+1 (555) 123-4567</p>
                   </div>
                 </div>
@@ -122,104 +72,27 @@ export default function Contact() {
 
               {/* Social Media */}
               <div className="mt-8 pt-8 border-t border-white/20">
-                <h4 className="text-white font-semibold mb-4">Follow Us</h4>
-                <div className="flex space-x-4">
-                  <a href="#" className="text-white/60 hover:text-blue-300 transition-colors text-2xl">
-                    <Facebook className="h-6 w-6" />
+                <h4 className="text-white font-semibold mb-4 text-center">Follow Us</h4>
+                <div className="flex justify-center space-x-6">
+                  <a href="#" className="text-white/60 hover:text-blue-300 transition-colors duration-200 flex flex-col items-center">
+                    <Mail className="h-8 w-8 mb-2" />
+                    <span className="text-sm">Email</span>
                   </a>
-                  <a href="#" className="text-white/60 hover:text-blue-300 transition-colors text-2xl">
-                    <Twitter className="h-6 w-6" />
+                  <a href="#" className="text-white/60 hover:text-blue-300 transition-colors duration-200 flex flex-col items-center">
+                    <Linkedin className="h-8 w-8 mb-2" />
+                    <span className="text-sm">LinkedIn</span>
                   </a>
-                  <a href="#" className="text-white/60 hover:text-blue-300 transition-colors text-2xl">
-                    <Instagram className="h-6 w-6" />
+                  <a href="#" className="text-white/60 hover:text-blue-300 transition-colors duration-200 flex flex-col items-center">
+                    <Instagram className="h-8 w-8 mb-2" />
+                    <span className="text-sm">Instagram</span>
                   </a>
-                  <a href="#" className="text-white/60 hover:text-blue-300 transition-colors text-2xl">
-                    <Linkedin className="h-6 w-6" />
-                  </a>
-                  <a href="#" className="text-white/60 hover:text-blue-300 transition-colors text-2xl">
-                    <Github className="h-6 w-6" />
+                  <a href="#" className="text-white/60 hover:text-blue-300 transition-colors duration-200 flex flex-col items-center">
+                    <Phone className="h-8 w-8 mb-2" />
+                    <span className="text-sm">Contact</span>
                   </a>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="glass-card p-8">
-            <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
-            
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-white font-medium mb-2">First Name</label>
-                  <Input
-                    id="firstName"
-                    value={formData.firstName}
-                    onChange={(e) => handleInputChange('firstName', e.target.value)}
-                    className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-300"
-                    placeholder="John"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-white font-medium mb-2">Last Name</label>
-                  <Input
-                    id="lastName"
-                    value={formData.lastName}
-                    onChange={(e) => handleInputChange('lastName', e.target.value)}
-                    className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-300"
-                    placeholder="Doe"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-white font-medium mb-2">Email</label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-300"
-                  placeholder="john.doe@student.stmartins.edu"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-white font-medium mb-2">Subject</label>
-                <Select value={formData.subject} onValueChange={(value) => handleInputChange('subject', value)}>
-                  <SelectTrigger className="bg-white/10 border-white/30 text-white focus:border-blue-300">
-                    <SelectValue placeholder="Select a topic" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="membership">Membership Inquiry</SelectItem>
-                    <SelectItem value="events">Event Information</SelectItem>
-                    <SelectItem value="collaboration">Collaboration</SelectItem>
-                    <SelectItem value="general">General Question</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-white font-medium mb-2">Message</label>
-                <Textarea
-                  id="message"
-                  value={formData.message}
-                  onChange={(e) => handleInputChange('message', e.target.value)}
-                  rows={5}
-                  className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-300 resize-none"
-                  placeholder="Tell us more about your inquiry..."
-                />
-              </div>
-
-              <Button 
-                type="submit" 
-                size="lg"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold"
-              >
-                Send Message
-                <Send className="h-4 w-4 ml-2" />
-              </Button>
-            </form>
           </div>
         </div>
       </div>

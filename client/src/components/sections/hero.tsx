@@ -32,9 +32,9 @@ export default function Hero() {
               size="lg"
               variant="outline"
               className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 text-lg font-semibold backdrop-blur border-white/30 hover:border-white/50"
-              onClick={() => scrollToSection('#events')}
+              onClick={() => window.open('https://forms.gle/wpSqWMN8u1ugFJfk9', '_blank')}
             >
-              View Events
+              Apply to Join
             </Button>
           </div>
         </div>
