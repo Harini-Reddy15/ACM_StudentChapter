@@ -2,7 +2,7 @@ import navyathaImage from "@assets/navyatasne2_1754029645258.jpg";
 import tshashankImage from "@assets/TShashank_1754029815783.jpg";
 import kruthiImage from "@assets/kruthisnr_1754029938930.jpg";
 import sahasraImage from "@assets/sahasra_1754030161495.jpg";
-import harshImage from "@assets/harshsnr_1754030317028.jpg";
+import harshImage from "@assets/harshsnrimg.jpg";
 import hariniImage from "@assets/harinisnr_1754030432845.jpg";
 
 const leadMembers = [
@@ -12,7 +12,7 @@ const leadMembers = [
     image: navyathaImage,
   },
   {
-    name: "T. Shashank",
+    name: "Thatikonda Shashank",
     title: "Student Vice Chair",
     image: tshashankImage,
   },
@@ -38,20 +38,25 @@ const leadMembers = [
   }
 ];
 
-const coreMembers = [
-  { name: "K. Shashank", role: "Operations Head" },
+const ExecutiveCommittee = [
+  { name: "Kanthula Shashank", role: "Operations Head" },
   { name: "Pramod Yadav", role: "Logistics Head" },
   { name: "Srikar Prasad", role: "Creative Head" },
-  { name: "Manikanta Kasyap", role: "Logistics Co-Lead" },
+  { name: "Vaishnavi", role: "AI & Research Head" },
+  { name: "Kallam Tanmayee", role: "Ambience and Setup Head" },
+  { name: "Gouthami", role: "Student Support Head" },
   { name: "Sameer Meharaaz", role: "PR - Lead" },
   { name: "Gayathri", role: "Chapter Historian" },
   { name: "Vijay Mohan", role: "Photography" },
-  { name: "Vaishnavi", role: "AI & Research Head" },
-  { name: "K. Tanmayee", role: "Ambience and Setup Head" },
   { name: "Manas Kumar", role: "Content Creator" },
   { name: "Sarayu", role: "Innovation Architect" },
-  { name: "Triaksh Thakur", role: "Executive Manager" },
-  { name: "Gouthami", role: "Student Support Head" },
+  { name: "Triaksh Thakur", role: "Executive Manager" }
+];
+
+
+
+const CoreCommitteeCoLeads = [
+  { name: "Manikanta Kasyap", role: "Logistics Co-Lead" },
   { name: "Satish Kumar", role: "Content Creator Co-Lead" },
   { name: "Abhi Satwik", role: "AI & Research Co-Lead" },
   { name: "R. Vikas", role: "Creative Co-Lead" },
@@ -90,12 +95,33 @@ export default function Team() {
           </div>
         </div>
 
-        {/* Core Team Members */}
-        <div>
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">Core Team Members</h3>
+        {/* Heads Section */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">Executive Committee</h3>
           <div className="glass-card p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {coreMembers.map((member, index) => (
+              {ExecutiveCommittee.map((member, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-all duration-300"
+                >
+                  <p className="text-white font-semibold mb-1">{member.name}</p>
+                  <p className="text-blue-300 text-sm">{member.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+       
+        
+
+        {/* Co-Leads Section */}
+        <div>
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">Core Committee Co-Leads</h3>
+          <div className="glass-card p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {CoreCommitteeCoLeads.map((member, index) => (
                 <div
                   key={index}
                   className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-all duration-300"
