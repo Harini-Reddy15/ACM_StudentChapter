@@ -1,4 +1,4 @@
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, Phone } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -16,7 +16,7 @@ export default function Contact() {
             <div className="glass-card p-8">
               <h3 className="text-2xl font-bold text-white mb-6 text-center">Get in Touch</h3>
               
-              <div className="flex justify-center space-x-8">
+              <div className="flex justify-center space-x-8 mb-8">
                 <a 
                   href="https://www.linkedin.com/in/acm-smec-student-chapter-106929377?trk=contact-info" 
                   target="_blank"
@@ -35,6 +35,33 @@ export default function Contact() {
                   <Instagram className="h-12 w-12 mb-3 group-hover:scale-110 transition-transform duration-200" />
                   <span className="text-lg font-medium">Instagram</span>
                 </a>
+              </div>
+
+              {/* Contact Details */}
+              <div className="border-t border-white/20 pt-6">
+                <h4 className="text-lg font-semibold text-white mb-4 text-center">For Further Queries Contact</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-center space-x-3 text-white/80 hover:text-white transition-colors duration-200">
+                    <Phone className="h-5 w-5 text-blue-300" />
+                    <a 
+                      href="tel:+916281631924" 
+                      className="text-lg font-medium hover:text-blue-300 transition-colors duration-200"
+                    >
+                      +91 6281631924
+                    </a>
+                    <span className="text-blue-300 font-medium">- Gouthami</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-3 text-white/80 hover:text-white transition-colors duration-200">
+                    <Phone className="h-5 w-5 text-blue-300" />
+                    <a 
+                      href="tel:+918179250093" 
+                      className="text-lg font-medium hover:text-blue-300 transition-colors duration-200"
+                    >
+                      +91 8179250093
+                    </a>
+                    <span className="text-blue-300 font-medium">- Sameer</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
