@@ -1,7 +1,7 @@
 import { Calendar, ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import inaugurationImage from "@assets/IMG_0083.JPG";
+import inaugurationImage from "@assets/groupPic.jpg";
 import acmLogo from "@assets/acm logo_1753950471424.jpg";
 import logoImage from "@assets/logo__1754028002215.png";
 
